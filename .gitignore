@@ -13,3 +13,4 @@
 dist/
 venv/
 activate
+__pycache__/

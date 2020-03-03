@@ -1,8 +1,8 @@
 
-include CONTRIBUTING.rst
-include HISTORY.rst
 include LICENSE
-include README.rst
+include *.md
+include tox.ini
+recursive-include incb *.py
 
 recursive-include tests *
 recursive-exclude * __pycache__

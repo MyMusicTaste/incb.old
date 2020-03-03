@@ -1,5 +1,3 @@
-__version__ = '0.0.1.dev0'
-
 try:
     __import__('pkg_resources').declare_namespace(__name__)
 except ImportError:

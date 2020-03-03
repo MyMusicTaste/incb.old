@@ -11,7 +11,7 @@ A python library for constructing nginx configuration files based on LinkedIn's 
 Installation
 ============
 ```
-pip install -e .
+pip install incb
 ```
 
 Usage

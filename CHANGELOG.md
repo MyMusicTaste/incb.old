@@ -4,3 +4,4 @@
 ------------------
 
 - Refactor the origin script
+- Remove support for python2.x

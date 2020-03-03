@@ -10,11 +10,14 @@ requirements = [
 
 extras = {}
 
-if int(setuptools.__version__.split(".", 1)[0]) < 18:
-    if sys.version_info[0:2] < (3, 3):
-        requirements.append("enum34==1.1.6")
-else:
-    extras[":python_version<'3.3'"] = ["enum34"]
+def get_version():
+    import incb
+    return incb.__version__
+
+
+def readme():
+    with open('README.md') as f:
+        return f.read()
 
 
 class Venv(setuptools.Command):
@@ -27,7 +30,7 @@ class Venv(setuptools.Command):
         """Abstract method that is required to be overwritten"""
 
     def run(self):
-        venv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'venv', 'nginx-config-builder')
+        venv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'venv', 'incb')
         print('Creating virtual environment in {path}'.format(path=venv_path))
         if '3' in self.python or sys.version_info[0] >= 3:
             import venv
@@ -51,26 +54,26 @@ class Venv(setuptools.Command):
 
 
 setuptools.setup(
-    name='nginx-config-builder',
-    version='1.0.1',
+    name='incb',
+    version=get_version(),
     description="A python library for generating nginx configs.",
-    author="Loren M. Carvalho",
-    author_email='loren@linkedin.com',
-    url='https://github.com/linkedin/nginx-config-builder',
-    packages=setuptools.find_packages('src'),
-    package_dir={'': 'src'},
+    long_description=readme(),
+    author="Jin Nguyen",
+    author_email='dangtrinhnt@mymusictaste.com',
+    url='https://github.com/MyMusicTaste/incb',
+    packages=setuptools.find_packages('incb'),
+    package_dir={'': 'incb'},
     include_package_data=True,
     install_requires=requirements,
     extras_require=extras,
     license="BSD license",
-    keywords='nginx-config-builder',
+    keywords='incb',
     classifiers=[
         'License :: OSI Approved :: BSD License',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8'
     ],
     cmdclass={'venv': Venv},
 )

@@ -3,15 +3,15 @@
 [![Documentation Status](https://readthedocs.org/projects/nginx-config-builder/badge/?version=latest)](http://nginx-config-builder.readthedocs.io/en/latest/?badge=latest)
 [![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
-nginx-config-builder
-====================
+incb
+====
 
-A python library for constructing nginx configuration files.
+A python library for constructing nginx configuration files based on LinkedIn's [nginx-config-builder](https://github.com/linkedin/nginx-config-builder)
 
 Installation
 ============
 ```
-pip install nginx-config-builder
+pip install -e .
 ```
 
 Usage
@@ -93,38 +93,13 @@ events {
 }
 ```
 
-Development
+Maintainers
 ===========
 
-Checkout the repo:
+* Jin Nguyen <dangtrinhnt@mymusictaste.com>
 
-```
-git clone git@github.com:linkedin/nginx-config-builder.git
-```
-
-Set up your virtual environment:
-
-```
-cd nginx-config-builder
-python setup.py venv
-source activate
-```
-
-Install the project and start hacking!
-
-```
-python setup.py develop
-```
-
-Don't forget to write/run tests!
-
-```
-pip install tox
-tox
-```
-
-Authors
-=======
+Original authors
+================
 
 * [Loren Carvalho](https://www.github.com/sixninetynine)
 * [William Orr](https://www.github.com/worr)
